@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+    web1:
+      image: nginx:latest
+      ports:
+        - "8080:80"
+      volumes:
+        - ./code:/code
+        - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      links:
+        - php
+        - rabbitmq
+    
+    php:
+      image: joseagt1994/php-mongo-redis-amqp
+      volumes:
+        - ./code:/code
+      links:
+        - rabbitmq
+        - mongo
+        - redis
+
+    rabbitmq:
+      image: rabbitmq:latest
+      ports:
+        - '4369:4369'
+        - '5672:5672'
+        - '25672:25672'
+        - '15672:15672'
+
+    redis:
+      image: redis:3
+      ports:
+        - "6379:6379"
+
+    mongo:
+      image: mongo:3.7
+      ports:
+        - "27017:27017"
