@@ -1,4 +1,4 @@
-var http = require("http");
+/*var http = require("http");
 
 var manejador = function (solicitud, respuesta) {
 	console.log("hola mundo");
@@ -7,3 +7,13 @@ var manejador = function (solicitud, respuesta) {
 var servidor = http.createServer(manejador);
 
 servidor.listen(6677);
+*/
+
+var express = require("express");
+var app = express();
+var server = require('http').Server(app);
+var io = require(socket.io);
+
+server.listen(6677,function () {
+	console.log("ze");
+});
