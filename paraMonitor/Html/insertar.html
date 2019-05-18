@@ -22,11 +22,13 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <select class="browser-default">
+      <form action="enviarMSG.php" method="post">
+      <select name="id" id="id" class="browser-default">
         <option value="" disabled selected>Canal/usuario</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
+        <option value="1001">usr:1001</option>
+        <option value="1002">usr:1002</option>
+        <option value="1003">usr:1003</option>
+        <option value="1004">usr:1004</option>
       </select>
       <br><br>
       <div class="row center">
@@ -34,8 +36,9 @@
       </div>
       <br><br>
       <div class="row center">
-        <a href="http://35.185.24.190:8080/" id="download-button" class="btn-large waves-effect waves-light orage">Guardar mensaje</a>
+        <input type="submit" name="Guardar mensaje" class="btn-large waves-effect waves-light orage">
       </div>
+      </form>
       <br><br>
       <div class="row center">
         <a href="http://35.185.24.190:8080/" id="download-button" class="btn-large waves-effect waves-light orage">regresar al inicio</a>
